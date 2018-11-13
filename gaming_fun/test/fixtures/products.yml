@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  maker_id: 1
+  category_id: 1
+  product_description: MyText
+  price: 1
+  release_date: 2018-11-14
+
+two:
+  name: MyString
+  maker_id: 1
+  category_id: 1
+  product_description: MyText
+  price: 1
+  release_date: 2018-11-14
