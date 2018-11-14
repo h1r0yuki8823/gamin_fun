@@ -1,2 +1,25 @@
-h1 Products#new
-p Find me in app/views/products/new.html.slim
+h1 製品新規登録
+
+.nav.justyfy-content-end
+    = link_to '一覧', products_path, class: 'nav-link'
+
+= form_with model: @product, local: true do |f|
+    .form-group
+        = f.label :name
+        = f.text_field :name, class: 'form-control', id: 'product_name'
+    .form-group
+        = f.label :maker_id
+        = f.text_field :maker_id, class: 'form-control', id: 'maker_id'
+    .form-group
+        = f.label :category_id
+        = f.text_field :category_id, class: 'form-control', id: 'category_id'
+    .form-group
+        = f.label :product_description
+        = f.text_field :product_description, class: 'form-control', id: 'product_description'
+    .form-group
+        = f.label :price
+        = f.text_field :price, class: 'form-control', id: 'product_price'
+    .form-group
+        = f.label :date
+        = f.text_field :release_date, class: 'form-control', id: 'release_date'
+    = f.submit nil, class: 'btn btn-primary'

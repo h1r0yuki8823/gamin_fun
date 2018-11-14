@@ -1,3 +1,21 @@
 h1 製品一覧
 
 = link_to '新規登録', new_product_path, class: 'btn btn-primary'
+
+.mb-3
+table.table.table-hover
+    thred.thred-default
+        tr
+            th= Product.human_attribute_name(:name)
+            th= Product.human_attribute_name(:maker_id)
+            th= Product.human_attribute_name(:price)
+
+    tbody
+        - @products.each do |product|
+            tr
+                td= link_to product.name, product_path(product)
+                td= product.maker_id
+                td= product.price
+            
+        
+                
