@@ -12,6 +12,13 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    product = Product.find(params[:id])
+    product.update(product_params)
+    redirect_to product_url, notice: "「#{product.name}」を更新しました。"
   end
 
   def create

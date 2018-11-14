@@ -6,7 +6,7 @@ table.table.table-hover
     tbody
         tr
             th= Product.human_attribute_name(:name)
-            td= @product.name
+            td= simple_format(h(@product.name), {}, sanitize: false, wrapper_tag: "div")
         tr
             th= Product.human_attribute_name(:maker_id)
             td= @product.maker_id
@@ -15,10 +15,12 @@ table.table.table-hover
             td= @product.category_id
         tr
             th= Product.human_attribute_name(:product_description)
-            td= @product.product_description
+            td= simple_format(h(@product.product_description), {}, sanitize: false, wrapper_tag: "div")
         tr
             th= Product.human_attribute_name(:price)
             td= @product.price
         tr
             th= Product.human_attribute_name(:date)
             td= @product.release_date
+        
+= link_to '編集', edit_product_path,class: 'btn btn-primary mr-3'
