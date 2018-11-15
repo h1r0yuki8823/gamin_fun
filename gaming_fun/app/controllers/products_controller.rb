@@ -22,16 +22,20 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(product_params)
-    product.save!
-    redirect_to products_url, notice: "「#{product.name}」を登録しました。"
+    @product = Product.new(product_params)
+    
+    if @product.save
+      redirect_to @product, notice: "「#{@product.name}」を登録しました。"
+    else
+      render :new
+    end
   end
 
-  #def destroy
-   # product = Product.find(params[:id])
-    #product.destroy
-    #redirect_to product_url, notice: "「#{product.name}」を削除しました。"
-  #end
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
+    redirect_to product_url, notice: "「#{product.name}」を削除しました。"
+  end
 
   private
 
