@@ -1,5 +1,6 @@
 h1 ユーザー登録
 
+
 = form_with model: [@user], local: true do |f|
     .form-group
         = f.label :name, '名前'
@@ -13,3 +14,4 @@ h1 ユーザー登録
     .form-group
         = f.label :password_confirmation, 'パスワード(確認)'
         = f.text_field :password_confirmation, class: 'form-control'
+    = f.submit nil, class: 'btn btn-primary'

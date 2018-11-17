@@ -18,6 +18,10 @@ ja:
         product_description: 製品情報
         price: 価格
         date: 発売年月日
+      user:
+        id: ID
+        name: ユーザーネーム
+        
   date:
     abbr_day_names:
     - 日
