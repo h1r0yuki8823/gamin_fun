@@ -2,6 +2,8 @@ h1 製品詳細
 
 .nav.justify-content-end
     = link_to '一覧', products_path, class: 'nav-link'
+    - if current_user
+        = link_to 'コメント', '#', class: 'nav-link'    
 table.table.table-hover
     tbody
         tr
