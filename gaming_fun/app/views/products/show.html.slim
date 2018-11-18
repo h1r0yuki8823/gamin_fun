@@ -24,6 +24,6 @@ table.table.table-hover
         tr
             th= Product.human_attribute_name(:date)
             td= @product.release_date
-        
-= link_to '編集', edit_product_path,class: 'btn btn-primary mr-3'
-= link_to '削除', @product, method: :delete, date:{ conform: "「#{@product.name}」を削除します。よろしいですか"}, class: 'btn btn-danger'
+-if current_user        
+    = link_to '編集', edit_product_path,class: 'btn btn-primary mr-3'
+    = link_to '削除', @product, method: :delete, date:{ conform: "「#{@product.name}」を削除します。よろしいですか"}, class: 'btn btn-danger'
