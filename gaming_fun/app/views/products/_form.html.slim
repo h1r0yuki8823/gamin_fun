@@ -9,12 +9,12 @@
         = f.text_field :name, class: 'form-control', id: 'product_name'
     .form-group
         = f.label :maker_id
-        /= f.text_field :maker_id, class: 'form-control', id: 'maker_id'
-        = f.select :subject, [["Razer", 1],["Logicool", 2],["SteelSeries", 3]],class: "form-control", id: 'maker_id'
+        = f.text_field :maker_id, class: 'form-control', id: 'maker_id'
+        /= f.select :subject, [["Razer", 1],["Logicool", 2],["SteelSeries", 3]],class: "form-control", id: 'maker_id'
     .form-group
         = f.label :category_id
-        /= f.text_field :category_id, class: 'form-control', id: 'category_id'
-        = f.select :subject, [["ゲーミングマウス", 1],["ゲーミングキーボード", 2]],class: "form-control", id: 'category_id'
+        = f.text_field :category_id, class: 'form-control', id: 'category_id'
+        /= f.select :subject, [["ゲーミングマウス", 1],["ゲーミングキーボード", 2]],class: "form-control", id: 'category_id'
     .form-group
         = f.label :product_description
         = f.text_field :product_description, class: 'form-control', id: 'product_description'
