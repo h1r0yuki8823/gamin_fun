@@ -1,3 +1,4 @@
 class Maker < ApplicationRecord
-    has_one :product
+    has_many :products
+    
 end
