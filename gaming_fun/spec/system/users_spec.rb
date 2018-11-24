@@ -26,6 +26,8 @@ describe 'ユーザー登録機能', type: :system do
     it '画面繊維しない' do 
         expect(page).to have_content 'ユーザー登録'
     end
+
+    
 end
 
     
