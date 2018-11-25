@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   root to: 'products#index'
   resources :products
   resources :users
-  resources :reviews
+  resources :reviews do
+    collection do 
+      post 'confirm'
+    end
+  end
+
 end

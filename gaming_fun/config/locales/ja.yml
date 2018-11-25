@@ -21,6 +21,9 @@ ja:
       user:
         id: ID
         name: ユーザーネーム
+      review:
+        title: タイトル
+        content: レビュー本文
         
   date:
     abbr_day_names:

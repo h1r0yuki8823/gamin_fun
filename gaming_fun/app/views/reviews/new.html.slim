@@ -1,4 +1,14 @@
-h1 Reviews#new
+h1 レビュー投稿画面
 h2 = @product_name
 
+= form_with model: @reviews,url:{action: 'confirm'}, local: true do |f|
+    .form-group
+        = f.label :title
+        = f.text_field :title, class: 'form-control', id: 'title'
+    
+    .form_group
+        = f.label :content
+        = f.text_area :content,size: "20x10", class: 'form-control', id: 'content'
 
+    /確認画面へ遷移してから登録
+    = f.submit '投稿' , class: 'btn btn-promary mr-3'
