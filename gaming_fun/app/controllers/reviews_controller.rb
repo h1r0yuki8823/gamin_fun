@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
   def new
-    @reviews = Review.new
+    @review = Review.new
     @product_id = params[:id]
     @product_name = params[:name]
     
@@ -10,7 +10,12 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @reviews = Review.new(comment_params)
+    @review = Review.new(comment_params)
+  end
+
+  #確認画面遷移
+  def confirm
+    @review = Review.new(comment_params)
   end
 
   def update
