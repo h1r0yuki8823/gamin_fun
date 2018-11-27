@@ -10,7 +10,14 @@ class ReviewsController < ApplicationController
   end
 
   def create
-  @review = Review.new(comment_params)
+    @review = Review.new(comment_params)
+
+    if @review.save
+      #redirect_to @product = Product.find(params[:id])
+      redirect_to product_url(id: @review.product_id)
+    else
+      render :new
+    end
   end
 
   #確認画面遷移
