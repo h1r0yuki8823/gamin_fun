@@ -1,7 +1,7 @@
 h1 レビュー投稿画面
 h2 = @product_name
 
-= form_with model: @reviews,url:{action: 'confirm'}, local: true do |f|
+= form_with model: @review ,url: {action: 'confirm'}, local: true do |f|
     .form-group
         = f.label :title
         = f.text_field :title, class: 'form-control', id: 'title'

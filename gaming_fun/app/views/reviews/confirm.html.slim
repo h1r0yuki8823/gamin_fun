@@ -1,10 +1,12 @@
 h1 確認画面
 
 table.table.table-hover
-    tbody
-        tr
-            th= Review.human_attribute_name(:title)
-            td= @review.title
-        tr 
-            th= Review.human_attribute_name(:content)
-            td= @review.content
+
+= form_with model: @review do |f|
+    .form-group
+        f.label =@review.title
+        f.hidden_field :title
+    .form-group
+        f.label =@review.content
+        f.hidden_field :content
+    = f.submit  "投稿する", class: 'btn btn-primary'

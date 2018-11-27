@@ -10,12 +10,13 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(comment_params)
+  @review = Review.new(comment_params)
   end
 
   #確認画面遷移
   def confirm
     @review = Review.new(comment_params)
+    
   end
 
   def update
