@@ -18,6 +18,7 @@ ja:
         product_description: 製品情報
         price: 価格
         date: 発売年月日
+        image: 画像
       user:
         id: ID
         name: ユーザーネーム

@@ -13,7 +13,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(comment_params)
 
     if @review.save
-      #redirect_to @product = Product.find(params[:id])
       redirect_to product_url(id: @review.product_id)
     else
       render :new

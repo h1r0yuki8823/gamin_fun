@@ -23,6 +23,7 @@ class ProductsController < ApplicationController
   end
 
   def create
+    binding.pry
     @product = Product.new(product_params)
     
     if @product.save
@@ -41,6 +42,6 @@ class ProductsController < ApplicationController
   private
 
   def product_params
-    params.require(:product).permit(:name,:maker_id, :category_id,:product_description,:price,:release_date)
+    params.require(:product).permit(:name,:maker_id, :category_id,:product_description,:price,:release_date, :image)
   end
 end

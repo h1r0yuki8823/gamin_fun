@@ -1,7 +1,7 @@
 - if product.errors.present?
     ul#error_explanation
         - product.errors.full_messages.each do |f|
-            li= message 
+            /li= message 
 
 = form_with model: product, local: true do |f|
     .form-group
@@ -24,4 +24,7 @@
     .form-group
         = f.label :date
         = f.text_field :release_date, class: 'form-control', id: 'release_date'
+    .form-group
+        = f.label :image
+        = f.file_field :image, class: 'form-control'
     = f.submit nil, class: 'btn btn-primary'

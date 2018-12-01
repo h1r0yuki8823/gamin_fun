@@ -6,6 +6,8 @@ h1 製品詳細
     = link_to 'レビューを投稿する', new_review_path(id: @product.id,name: @product.name), class: 'nav-link'    
 table.table.table-hover
     tbody
+        tr 
+            td= image_tag @product.image if @product.image.attached?
         tr
             th= Product.human_attribute_name(:name)
             td= simple_format(h(@product.name), {}, sanitize: false, wrapper_tag: "div")
