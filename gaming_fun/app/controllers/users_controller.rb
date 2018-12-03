@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 binding.pry
     if @user.save
-      log_in @user
       redirect_to users_path, notice: "ユーザー「#{@user.name}」を登録しました。"
     else
       #なにで失敗したか知らせる処理を加える
