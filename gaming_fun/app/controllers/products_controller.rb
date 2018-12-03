@@ -26,7 +26,7 @@ class ProductsController < ApplicationController
     binding.pry
     @product = Product.new(product_params)
     
-    if @product.save
+    if @product.save!
       redirect_to @product, notice: "「#{@product.name}」を登録しました。"
     else
       render :new
