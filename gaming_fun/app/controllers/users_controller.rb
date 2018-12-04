@@ -9,7 +9,6 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-binding.pry
     if @user.save
       redirect_to users_path, notice: "ユーザー「#{@user.name}」を登録しました。"
     else

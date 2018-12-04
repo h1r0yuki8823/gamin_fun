@@ -4,8 +4,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    
     @product = Product.find(params[:id])
-    #@product = Product.all.includes(:reviews)
+    #@reviews = Review.find()
   end
 
   def new
@@ -23,7 +24,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
+
     @product = Product.new(product_params)
     
     if @product.save!

@@ -1,9 +1,8 @@
 class ReviewsController < ApplicationController
-  def new
+  def new    
     @review = Review.new
     @product_id = params[:id]
     @product_name = params[:name]
-    
   end
 
   def edit
@@ -21,8 +20,7 @@ class ReviewsController < ApplicationController
 
   #確認画面遷移
   def confirm
-    @review = Review.new(comment_params)
-    
+    @review = Review.new(comment_params)  
   end
 
   def update
@@ -33,7 +31,7 @@ class ReviewsController < ApplicationController
 
   private 
   def comment_params
-    params.require(:review).permit(:content, :product_id, :title)
+    params.require(:review).permit(:content, :product_id, :title, :user_id)
   end
 
 end

@@ -3,6 +3,7 @@ h1 製品詳細
 .nav.justify-content-end
     = link_to '一覧', products_path, class: 'nav-link'
     //- if current_user
+    
     = link_to 'レビューを投稿する', new_review_path(id: @product.id,name: @product.name), class: 'nav-link'    
 table.table.table-hover
     tbody
@@ -24,17 +25,16 @@ table.table.table-hover
         tr
             th= Product.human_attribute_name(:price)
             td= @product.price
+            
         tr
             th= Product.human_attribute_name(:date)
             td= @product.release_date
 
-       
-
 = @product.reviews.each do |f|
+    li= f.user.name
     li= f.title
     li= f.content
-
-
+    
 
 -if current_user        
     = link_to '編集', edit_product_path,class: 'btn btn-primary mr-3'
