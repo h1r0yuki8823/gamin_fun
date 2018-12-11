@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
     @review = Review.new
     @product_id = params[:id]
     @product_name = params[:name]
+    
   end
 
   def edit
@@ -10,7 +11,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(comment_params)
-
+    binding.pry
     if @review.save
       redirect_to product_url(id: @review.product_id)
     else
@@ -21,6 +22,7 @@ class ReviewsController < ApplicationController
   #確認画面遷移
   def confirm
     @review = Review.new(comment_params)  
+    
   end
 
   def update

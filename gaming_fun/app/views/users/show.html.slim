@@ -1,2 +1,11 @@
-h1 Users#show
-p Find me in app/views/users/show.html.slim
+h1 UserInfo
+
+.nav.justify-content-end
+    = link_to '編集', edit_user_path, class: 'btn btn-primary mr-3'
+
+table.table.table-hover
+    tbody
+        tr
+            th= User.human_attribute_name(:name)
+            td= simple_format(h(@user.name), {}, sanitize: false, wrapper_tag: "div")
+        

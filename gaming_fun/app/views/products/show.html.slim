@@ -4,7 +4,8 @@ h1 製品詳細
     = link_to '一覧', products_path, class: 'nav-link'
     //- if current_user
     
-    = link_to 'レビューを投稿する', new_review_path(id: @product.id,name: @product.name), class: 'nav-link'    
+    = link_to 'レビューを投稿する', new_review_path(id: @product.id,name: @product.name), class: 'nav-link'  
+    
 table.table.table-hover
     tbody
         tr 
