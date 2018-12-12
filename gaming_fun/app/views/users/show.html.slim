@@ -3,9 +3,17 @@ h1 UserInfo
 .nav.justify-content-end
     = link_to '編集', edit_user_path, class: 'btn btn-primary mr-3'
 
+h2
+    
+
+
 table.table.table-hover
-    tbody
+    thead 
         tr
             th= User.human_attribute_name(:name)
+            th= User.human_attribute_name(:email)
+            th colspan="10"
+    tbody
+        tr
             td= simple_format(h(@user.name), {}, sanitize: false, wrapper_tag: "div")
-        
+            td= simple_format(h(@user.email), {}, sanitize: false, wrapper_tag: "div")
